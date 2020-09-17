@@ -1,3 +1,4 @@
+import tokenService from '../services/tokenService'
 const BASE_URL = '/api/lists';
 
 export function getAll() {
@@ -8,9 +9,10 @@ export function getAll() {
 export function create(list) {
     return fetch(BASE_URL, {
       method: 'POST',
-      headers: {'content-type': 'application/json'},
+      headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
       body: JSON.stringify(list)
-    }).then(res => res.json());
+    }, { mode: 'cors' })
+    .then(res => res.json());
 }
 
 export function deleteOne(id) {

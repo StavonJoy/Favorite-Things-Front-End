@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function ListCard({ user, list, handleDeleteList }) {
   return (
@@ -21,23 +21,23 @@ function ListCard({ user, list, handleDeleteList }) {
                   <div>Item:  {list.item1}</div>
                   <div>Item:  {list.item2}</div>
                   <div>Item:  {list.item3}</div>
-                  {/* {user && (user._id === movie.addedBy._id) &&
-                      <>
-                          <button type="submit" className="btn red" onClick={() => handleDeleteMovie(movie._id)}>
-                        <i className="material-icons left">delete</i>    
-                              Delete Movie
-                          </button>
-                          <Link 
-                              className="btn yellow black-text"
-                              to={{
-                                  pathname: '/edit',
-                                  state: {movie}
-                              }}
-                          ><i className="material-icons left">build</i>
-                              Edit Movie
-                          </Link>
-                      </>
-                      } */}
+                  <div className='panel-footer'>
+                    <Link
+                      className='btn btn-xs btn-warning'
+                      to={{
+                        pathname: '/edit',
+                        state: {list}
+                      }}
+                    >
+                    EDIT
+                    </Link>
+                    <button
+                    className='btn btn-xs btn-danger margin-left-10'
+                    onClick={() => handleDeleteList(list._id)}
+                    >
+                    DELETE
+                    </button>
+                  </div>
               </div>
           </div>
       </>

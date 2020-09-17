@@ -7,6 +7,7 @@ import Users from "../Users/Users";
 import Lists from '../Lists/Lists';
 import authService from "../../services/authService";
 import AddListPage from '../AddListPage/AddListPage';
+import EditListPage from '../EditListPage/EditListPage';
 import * as listAPI from '../../services/lists-api'
 import "./App.css";
 
@@ -33,7 +34,7 @@ class App extends Component {
     }), () => this.props.history.push('/'));
   }
 
-  haandleDeleteList= async id => {
+  handleDeleteList= async id => {
     await listAPI.deleteOne(id);
     this.setState(state => ({
       puppies: state.puppies.filter(l => l._id !== id)
@@ -99,6 +100,12 @@ class App extends Component {
             handleAddList = {this.handleAddList}
             />
           } />
+            <Route exact path='/edit' render={({history, location}) => 
+          <EditListPage
+          handleUpdateList={this.handleUpdateList}
+          location={location}
+          />
+        }/>
       </>
     );
   }

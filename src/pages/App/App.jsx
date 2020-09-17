@@ -10,6 +10,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
+    lists: [],
     user: authService.getUser(),
   };
 
@@ -65,7 +66,12 @@ class App extends Component {
         <Route
           exact
           path="/lists"
-          render={() => (user ? <Lists /> : <Redirect to="/lists" />)}
+          render={() => 
+            (user ? <Lists 
+              lists={this.state.lists}
+              user={this.state.user}
+            /> : <Redirect to="/login" />)}
+            
         />
       </>
     );

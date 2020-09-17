@@ -33,10 +33,17 @@ class App extends Component {
     }), () => this.props.history.push('/'));
   }
 
+  haandleDeleteList= async id => {
+    await listAPI.deleteOne(id);
+    this.setState(state => ({
+      puppies: state.puppies.filter(l => l._id !== id)
+    }), () => this.props.history.push('/'));
+  }
+
   async componentDidMount() {
     const lists = await listAPI.getAll();
     this.setState({lists});
-}
+  }
 
   render() {
     const { user } = this.state
@@ -83,6 +90,7 @@ class App extends Component {
           render={() => 
             (user ? <Lists 
               lists={this.state.lists}
+              handleDeleteList={this.handleDeleteList}
               user={this.state.user}
             /> : <Redirect to="/login" />)}
         />

@@ -16,5 +16,31 @@ nav {
 }
 a {
   color: white;
- }
+}
 
+.users-list {
+  margin: auto;
+  text-align: center;
+  color: white;
+  background-color: rgba(105, 105, 105, 0.664);
+  width: fit-content;
+  font-size: large;
+}
+
+.sign-up-form, .login-form {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  color: white;
+  background-color: rgba(105, 105, 105, 0.664);
+  width: fit-content;
+}
+
+input {
+  margin: 15px;
+  color: black;
+}
+
+#login-btn {
+  color: black;
+}

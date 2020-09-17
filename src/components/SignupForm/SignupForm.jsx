@@ -39,47 +39,57 @@ class SignupForm extends Component {
     return (
       <div>
         <h3>Sign Up</h3>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            autoComplete="off"
-            id="name"
-            value={name}
-            name="name"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="email"
-            value={email}
-            name="email"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={password}
-            name="password"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="confirm"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="confirm">Confirm Password</label>
-          <button disabled={this.isFormInvalid()}>Sign Up</button>
-          &nbsp;&nbsp;
-          <Link to="/">Cancel</Link>
-        </form>
+        <div className='sign-up-form'>
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <div className='form-item'>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                autoComplete="off"
+                id="name"
+                value={name}
+                name="name"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='form-item'>
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                autoComplete="off"
+                id="email"
+                value={email}
+                name="email"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='form-item'>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                autoComplete="off"
+                id="password"
+                value={password}
+                name="password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className='form-item'>
+              <label htmlFor="confirm">Confirm Password</label>
+              <input
+                type="password"
+                autoComplete="off"
+                id="confirm"
+                value={passwordConf}
+                name="passwordConf"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button disabled={this.isFormInvalid()}>Sign Up</button>
+            &nbsp;&nbsp;
+            <Link to="/">Cancel</Link>
+          </form>
+        </div>
       </div>
     );
   }

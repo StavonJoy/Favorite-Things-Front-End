@@ -32,30 +32,36 @@ class Login extends Component {
     return (
       <main className="Login">
         <h3>Log In!</h3>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            autoComplete="off"
-            id="email"
-            value={email}
-            name="email"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={pw}
-            name="pw"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <button className="btn green">Log In</button>&nbsp;&nbsp;&nbsp;
-          <Link className="btn red" to="/">
-            Cancel
-          </Link>
-        </form>
+        <div className='login-form'>
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <div className='form-item'>
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                autoComplete="off"
+                id="email"
+                value={email}
+                name="email"
+                onChange={this.handleChange}
+              />  
+            </div>
+            <div className='form-item'>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                autoComplete="off"
+                id="password"
+                value={pw}
+                name="pw"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button id="login-btn" className="btn green">Log In</button>&nbsp;&nbsp;&nbsp;
+            <Link className="btn red" to="/">
+              Cancel
+            </Link>
+          </form>
+        </div>
       </main>
     );
   }

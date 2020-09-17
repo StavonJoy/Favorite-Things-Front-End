@@ -47,7 +47,7 @@ class AddListPage extends Component {
               <label>List's Image URL(required)</label>
               <input
                 className="form-control"
-                name="breed"
+                name="image"
                 value={this.state.formData.image}
                 onChange={this.handleChange}
                 required
@@ -57,7 +57,7 @@ class AddListPage extends Component {
               <label>List Items 1:</label>
               <input
                 className="form-control"
-                name="age"
+                name="item1"
                 value={this.state.formData.item1}
                 onChange={this.handleChange}
               />
@@ -66,7 +66,7 @@ class AddListPage extends Component {
               <label>List Items 2:</label>
               <input
                 className="form-control"
-                name="age"
+                name="item2"
                 value={this.state.formData.item2}
                 onChange={this.handleChange}
               />
@@ -75,7 +75,7 @@ class AddListPage extends Component {
               <label>List Items 3:</label>
               <input
                 className="form-control"
-                name="age"
+                name="item3"
                 value={this.state.formData.item3}
                 onChange={this.handleChange}
               />

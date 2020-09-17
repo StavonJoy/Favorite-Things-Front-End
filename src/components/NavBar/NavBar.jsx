@@ -11,6 +11,7 @@ const NavBar = ({ user, handleLogout }) => {
               <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
               <li><a href="/users" className="nav-link">Users</a></li>
               <li><a href="/lists" className="nav-link">Favorite's List</a></li>
+              <li><a href="/add" className="nav-link">Add a List</a></li>
               <Link to='' className='NavBar-link' onClick={handleLogout} >LOG OUT</Link>
             </ul>
           </div>

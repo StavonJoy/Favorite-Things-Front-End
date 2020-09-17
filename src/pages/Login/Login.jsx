@@ -31,7 +31,7 @@ class Login extends Component {
     const {email, pw} = this.state
     return (
       <main className="Login">
-        <h3>Log In</h3>
+        <h3>Log In!</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <input
             type="text"

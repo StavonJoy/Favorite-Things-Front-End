@@ -6,6 +6,8 @@ import Login from "../Login/Login";
 import Users from "../Users/Users";
 import Lists from '../Lists/Lists';
 import authService from "../../services/authService";
+import AddListPage from '../AddListPage/AddListPage';
+import * as listAPI from '../../services/lists-api'
 import "./App.css";
 
 class App extends Component {
@@ -23,6 +25,18 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: authService.getUser() });
   };
+
+  handleAddList = async newListData => {
+    const newList = await listAPI.create(newListData);
+    this.setState(state => ({
+      lists: [...state.lists, newList]
+    }), () => this.props.history.push('/'));
+  }
+
+  async componentDidMount() {
+    const lists = await listAPI.getAll();
+    this.setState({lists});
+}
 
   render() {
     const { user } = this.state
@@ -71,8 +85,12 @@ class App extends Component {
               lists={this.state.lists}
               user={this.state.user}
             /> : <Redirect to="/login" />)}
-            
         />
+        <Route exact path='/add' render={() => 
+          <AddListPage
+            handleAddList = {this.handleAddList}
+            />
+          } />
       </>
     );
   }

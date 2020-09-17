@@ -1,3 +1,5 @@
+import React, {Component} from 'react'
+
 class AddListPage extends Component {
     state = {
       invalidForm: true,

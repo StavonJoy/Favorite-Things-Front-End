@@ -5,3 +5,16 @@ main {
 .nav-wrapper {
   display: flex;
 }
+body {
+  background-image: url(https://images.pexels.com/photos/1542495/pexels-photo-1542495.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: 100%;
+  color: white;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.329);
+}
+a {
+  color: white;
+ }
+

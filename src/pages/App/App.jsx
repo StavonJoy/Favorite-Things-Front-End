@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Users from "../Users/Users";
+import Lists from '../Lists/Lists';
 import authService from "../../services/authService";
 import "./App.css";
 
@@ -60,6 +61,11 @@ class App extends Component {
           exact
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
+        />
+        <Route
+          exact
+          path="/lists"
+          render={() => (user ? <Lists /> : <Redirect to="/lists" />)}
         />
       </>
     );
